@@ -5,6 +5,18 @@ const port = process.env.PORT || 3001;
 app.use(express.json())
 app.use(express.urlencoded({extended: true}));
 
+const ashCapturedPokemons = [
+  "Pikachu",
+  "Bulbasaur",
+  "Charmander",
+  "Squirtle",
+  "Caterpie",
+  "Butterfree",
+  "Pidgey",
+  "Rattata",
+  "Spearow",
+  "Ekans",
+];
 
 app.get("/", (req, res) => res.type('html').send(html));
 
@@ -20,6 +32,11 @@ app.get('/meunome', (req, res) => {
 
 app.get('/tico', (req, res) => {
   res.send('teco');
+});
+
+app.get("/pokemons", (req, res) => {
+  const first10Pokemons = ashCapturedPokemons.slice(0, 10);
+  res.json(first10Pokemons);
 });
 
 
