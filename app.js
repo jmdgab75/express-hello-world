@@ -18,6 +18,12 @@ const ashCapturedPokemons = [
   "Ekans",
 ];
 
+const seriesFavoritas = [
+  { nome: "Série 1", genero: "Drama" },
+  { nome: "Série 2", genero: "Comédia" },
+  { nome: "Série 3", genero: "Ação" },
+];
+
 app.get("/", (req, res) => res.type('html').send(html));
 
 app.get('/req', (req, res) => {
@@ -38,6 +44,11 @@ app.get("/pokemons", (req, res) => {
   const first10Pokemons = ashCapturedPokemons.slice(0, 10);
   res.json(first10Pokemons);
 });
+
+app.post("/series", (req, res) => {
+  res.json(seriesFavoritas.slice(0, 3));
+});
+
 
 
 
