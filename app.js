@@ -18,6 +18,11 @@ app.get('/meunome', (req, res) => {
   res.send(`Meu nome é ${meuNome}`);
 });
 
+app.get('/tico', (req, res) => {
+  res.send('teco');
+});
+
+
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
