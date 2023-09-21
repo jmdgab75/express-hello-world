@@ -13,6 +13,10 @@ app.get('/req', (req, res) => {
     res.send('Yo!')
 })
 
+app.get('/meunome', (req, res) => {
+  const meuNome = "gabriel";
+  res.send(`Meu nome é ${meuNome}`);
+});
 
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
